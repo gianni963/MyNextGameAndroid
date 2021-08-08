@@ -12,4 +12,21 @@
         android:scaleType="centerCrop"
         android:src="@drawable/ff7" />
 
+    <TextView
+        android:id="@+id/name_popular_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/item_margin"
+        android:textColor="@color/white"
+        android:text="Cyberpunk 2077" />
+
+    <TextView
+        android:id="@+id/platform_popular_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="platform"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/item_margin" />
+
 </androidx.cardview.widget.CardView>

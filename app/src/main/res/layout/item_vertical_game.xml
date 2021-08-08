@@ -36,17 +36,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/item_margin"
+        android:textColor="@color/white"
         android:text="Cyberpunk 2077"
         app:layout_constraintBottom_toTopOf="@+id/view_separation"
         app:layout_constraintStart_toEndOf="@+id/cardView2" />
 
     <TextView
-        android:id="@+id/dplatform_item"
+        android:id="@+id/platform_item"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="platform"
+        android:textColor="@color/white"
         android:layout_marginLeft="@dimen/item_margin"
-
         app:layout_constraintStart_toEndOf="@+id/cardView2"
         app:layout_constraintTop_toBottomOf="@+id/view_separation" />
 

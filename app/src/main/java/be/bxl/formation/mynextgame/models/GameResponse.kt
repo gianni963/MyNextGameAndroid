@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class GameResponse(
-    @SerializedName("games")
+    @SerializedName("results")
     val games : List<Game>
 ) : Parcelable {
     constructor() : this(mutableListOf())

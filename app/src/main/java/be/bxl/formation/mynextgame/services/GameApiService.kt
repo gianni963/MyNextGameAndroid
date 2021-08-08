@@ -5,7 +5,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class GameApiService {
     companion object{
-        private const val BASE_URL = "https://api.igdb.com/v4/"
+        //private const val BASE_URL = "https://api.igdb.com/v4/"
+        private const val BASE_URL = "https://api.themoviedb.org/3/"
         private var retrofit : Retrofit? = null
 
         fun getInstance() : Retrofit{
