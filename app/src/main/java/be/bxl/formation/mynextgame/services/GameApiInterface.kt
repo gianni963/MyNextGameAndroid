@@ -15,14 +15,12 @@ interface GameApiInterface {
     )
     @POST("/games")
    Request to get popular games (in Post) ->
-        "fields name, cover.url, first_release_date, total_rating_count, platforms.abbreviation, rating, slug;
+ fields name, cover.url, first_release_date, total_rating_count, platforms.abbreviation, rating, slug;
         where platforms = (48,49,130,6)
-        & (first_release_date >= {$before}
-        & first_release_date < {$after}
+        & (first_release_date >= 1523404800
         & total_rating_count > 5);
         sort total_rating_count desc;
-        limit 12;", "text/plain"
-
+        limit 12;
      @FormUrlEncoded    // annotation that used with POST type request
     @Headers(
         "Client-ID: 51p3gbvxlg1l16mj6sa2te5ctekbyy",

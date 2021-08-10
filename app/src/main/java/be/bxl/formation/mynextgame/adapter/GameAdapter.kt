@@ -38,5 +38,5 @@ class GameAdapter(
         holder.bindGame(games[position])
     }
 
-    override fun getItemCount(): Int = 2
+    override fun getItemCount(): Int = 5
 }
