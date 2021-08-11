@@ -35,14 +35,6 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/default_margin"
-                android:layout_marginLeft="@dimen/default_margin"
-                android:text="Popular games"
-                android:textColor="@color/white" />
             <FrameLayout
                 android:id="@+id/fragment_container"
                 android:layout_width="match_parent"
@@ -57,7 +49,22 @@
                 android:layout_marginTop="@dimen/default_margin" />
 
 
-        </LinearLayout>
+            </LinearLayout>
+
+
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/menu"
+        android:background="#000000"
+        app:itemIconTint="#ffff"
+        app:itemTextColor="#ffff"  />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_home"
+        android:icon="@drawable/ic_baseline_games_24"
+        android:title="Home" />
+    <item
+        android:id="@+id/ic_wishlist"
+        android:icon="@drawable/ic_favorite"
+        android:title="Wish List" />
+    <item
+        android:id="@+id/ic_search"
+        android:icon="@drawable/ic_search"
+        android:title="Search" />
+    <item
+        android:id="@+id/ic_my_space"
+        android:icon="@drawable/ic_baseline_perm_identity_24"
+        android:title="My Space" />
+</menu>

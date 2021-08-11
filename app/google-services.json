@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "462047002798",
+    "project_id": "my-next-game-android",
+    "storage_bucket": "my-next-game-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462047002798:android:b04294c9f5d9f09ad82d3f",
+        "android_client_info": {
+          "package_name": "be.bxl.formation.mynextgame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462047002798-a46o10fdtq0qvm965slbdq8lsu630j2k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSGY_aguRjDOPnFZP-4kuQwP5-f9-l0cQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462047002798-a46o10fdtq0qvm965slbdq8lsu630j2k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
