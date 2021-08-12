@@ -47,6 +47,8 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        val userId = intent.getStringExtra("user_id")
+        val emailId = intent.getStringExtra("email_id")
 
         }
 
