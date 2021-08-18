@@ -3,6 +3,9 @@
     android:orientation="vertical"
     android:layout_width="150dp"
     android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?selectableItemBackground"
     android:layout_marginLeft="@dimen/default_margin">
     
     <ImageView
@@ -28,5 +31,15 @@
         android:layout_marginTop="20dp"
         android:textColor="@color/white"
         android:layout_marginLeft="@dimen/item_margin" />
+
+    <TextView
+        android:id="@+id/id_popular_item"
+
+        android:textSize="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/item_margin"
+        android:layout_marginTop="20dp"
+        android:text="id" />
 
 </androidx.cardview.widget.CardView>

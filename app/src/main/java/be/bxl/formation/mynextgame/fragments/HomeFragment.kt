@@ -1,14 +1,21 @@
 package be.bxl.formation.mynextgame.fragments
 
+import android.content.Intent
 import be.bxl.formation.mynextgame.models.Game
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import be.bxl.formation.mynextgame.MainActivity
+import be.bxl.formation.mynextgame.MovieDetails
 import be.bxl.formation.mynextgame.adapter.GameLastReleaseAdapter
 import be.bxl.formation.mynextgame.R
+import be.bxl.formation.mynextgame.RegisterUser
 import be.bxl.formation.mynextgame.adapter.GameAdapter
 import be.bxl.formation.mynextgame.adapter.GameItemDeco
 
@@ -16,6 +23,7 @@ import be.bxl.formation.mynextgame.models.GameResponse
 
 import be.bxl.formation.mynextgame.services.GameApiInterface
 import be.bxl.formation.mynextgame.services.GameApiService
+import com.google.firebase.auth.FirebaseAuth
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,12 +41,13 @@ class HomeFragment : Fragment() {
         val horizontalRecyclerView = view.findViewById<RecyclerView>(R.id.popular_game_horizontal_recycler_view)
         val verticalRecyclerView = view.findViewById<RecyclerView>(R.id.last_game_vertical_recycler_view)
 
+
         getGameData { games : List<Game> ->
             //recuperer recylcler view popular games + ajouter data de l'api
             val w1 = games.get(0)
             println("---------- !!! we are looking for $w1")
             //récuper recycler view vertical last releases
-            horizontalRecyclerView.adapter = GameAdapter(R.layout.item_horizontal_game,games)
+            horizontalRecyclerView.adapter = GameAdapter(R.layout.item_horizontal_game,games, MainActivity())
         }
 
         getLastGamesData { games : List<Game> ->

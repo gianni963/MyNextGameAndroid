@@ -52,6 +52,7 @@ class FragmentLogin : Fragment() {
         registerButton.setOnClickListener{
             val intent = Intent(getActivity(), RegisterUser::class.java)
             startActivity(intent)
+
         }
         //User fill in  the form and click login button
         val loginButton =  view.findViewById<TextView>(R.id.signIn)
