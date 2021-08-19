@@ -47,7 +47,20 @@ class HomeFragment : Fragment() {
             val w1 = games.get(0)
             println("---------- !!! we are looking for $w1")
             //récuper recycler view vertical last releases
-            horizontalRecyclerView.adapter = GameAdapter(R.layout.item_horizontal_game,games, MainActivity())
+            horizontalRecyclerView.adapter = GameAdapter(R.layout.item_horizontal_game,games, requireContext()){
+                game ->
+                    Toast.makeText(
+                     context,
+                    "you click on item # ${game.title} ",
+                    Toast.LENGTH_SHORT
+                    ).show()
+                val intent = Intent(requireContext(),MovieDetails::class.java)
+                intent.putExtra("IDGame", game.id)
+                startActivity(intent)
+
+
+            }
+
         }
 
         getLastGamesData { games : List<Game> ->

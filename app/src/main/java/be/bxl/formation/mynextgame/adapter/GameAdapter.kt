@@ -1,5 +1,6 @@
 package be.bxl.formation.mynextgame.adapter
 
+import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
@@ -20,25 +21,24 @@ import kotlinx.android.synthetic.main.item_vertical_game.view.image_item
 class GameAdapter(
     private val layoutId: Int,
     private val games : List<Game>,
-    val context : MainActivity
+    val context : Context,
+    val onClickGame : (Game) -> Unit
     ) : RecyclerView.Adapter<GameAdapter.ViewHolder>() {
 
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         //val GameImage = view.findViewById<ImageView>(R.id.image_item)
         private val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
-        init{
-            itemView.setOnClickListener { v: View ->
-                val position: Int = adapterPosition
-                Toast.makeText(
-                    itemView.context,
-                    "you click on item # ${position + 1} ",
-                    Toast.LENGTH_SHORT
-                ).show()
-
-
-            }
-        }
+//        init{
+//            itemView.setOnClickListener { v: View ->
+//                val position: Int = adapterPosition
+//                Toast.makeText(
+//                    itemView.context,
+//                    "you click on item # ${position + 1} ",
+//                    Toast.LENGTH_SHORT
+//                ).show()
+//            }
+//        }
 
 
 
@@ -71,6 +71,12 @@ class GameAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindGame(games[position])
+        holder.itemView.setOnClickListener{ v: View ->
+            val currentGame = games[position]
+            this.onClickGame(currentGame)
+
+
+       }
 
 
     }
