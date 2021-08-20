@@ -13,5 +13,7 @@ class MoviePopup(
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.popup_movies_details)
+
+        //TODO DISPLAY POPUP WITH MOVIE INFOS WHEN USER PRESS AND HOLD A AN IMAGE MOVIE FROM RECYCLER VIEW
     }
 }

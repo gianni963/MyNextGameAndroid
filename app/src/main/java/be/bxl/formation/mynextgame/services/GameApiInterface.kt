@@ -44,6 +44,12 @@ interface GameApiInterface {
 
     @GET("movie/upcoming?api_key=eb3be908ef3e581fa7fad067e30d4c21&language=fr&page=1")
     fun getLastGames(): Call<GameResponse>
+/*
+
+    @GET("movie/{movie_id}?api_key=eb3be908ef3e581fa7fad067e30d4c21&language=fr&page=1")
+    fun getMovieDetails(@Path("movie_id") groupId : String): Call<Game>
+*/
+
 
 
 

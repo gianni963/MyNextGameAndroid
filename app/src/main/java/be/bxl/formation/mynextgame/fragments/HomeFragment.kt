@@ -56,6 +56,8 @@ class HomeFragment : Fragment() {
                     ).show()
                 val intent = Intent(requireContext(),MovieDetails::class.java)
                 intent.putExtra("IDGame", game.id)
+                intent.putExtra("TitleGame", game.title)
+                intent.putExtra("CoverGame", game.poster)
                 startActivity(intent)
 
 
