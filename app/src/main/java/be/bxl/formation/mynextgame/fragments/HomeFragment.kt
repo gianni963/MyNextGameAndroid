@@ -3,6 +3,7 @@ package be.bxl.formation.mynextgame.fragments
 import android.content.Intent
 import be.bxl.formation.mynextgame.models.Game
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
+import be.bxl.formation.mynextgame.Db.GameDao
 import be.bxl.formation.mynextgame.MainActivity
 import be.bxl.formation.mynextgame.MovieDetails
 import be.bxl.formation.mynextgame.adapter.GameLastReleaseAdapter
@@ -58,8 +60,8 @@ class HomeFragment : Fragment() {
                 intent.putExtra("IDGame", game.id)
                 intent.putExtra("TitleGame", game.title)
                 intent.putExtra("CoverGame", game.poster)
+                intent.putExtra("ReleaseGame", game.release)
                 startActivity(intent)
-
 
             }
 
@@ -73,6 +75,7 @@ class HomeFragment : Fragment() {
             verticalRecyclerView.addItemDecoration(GameItemDeco())
 
         }
+
 
 
         return view

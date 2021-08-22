@@ -9,6 +9,7 @@ import okhttp3.internal.platform.Platform
 
 @Parcelize
 data class Game (
+
     //for test
     @SerializedName("id")
     val id : String ?,

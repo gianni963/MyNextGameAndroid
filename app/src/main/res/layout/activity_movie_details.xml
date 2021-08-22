@@ -56,7 +56,7 @@
         />
 
     <TextView
-        android:id="@+id/ovies_id"
+        android:id="@+id/id_movies"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="id"
@@ -66,13 +66,14 @@
         />
 
     <ImageView
+        android:id="@+id/favourite_movie"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_unstar"
-        app:layout_constraintBottom_toBottomOf="@+id/ovies_id"
-        app:layout_constraintEnd_toEndOf="@+id/close_popup"
+        app:layout_constraintBottom_toBottomOf="@+id/id_movies"
         app:layout_constraintStart_toStartOf="@+id/movie_details_title"
         app:layout_constraintTop_toTopOf="@+id/movie_details_title"
+
         app:tint="#000000" />
 
 

@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import be.bxl.formation.mynextgame.Db.GameDao
 import be.bxl.formation.mynextgame.fragments.FragmentLogin
 import be.bxl.formation.mynextgame.fragments.FragmentSearch
 import be.bxl.formation.mynextgame.fragments.FragmentWishList
 import be.bxl.formation.mynextgame.fragments.HomeFragment
+import be.bxl.formation.mynextgame.models.Game
 import be.bxl.formation.mynextgame.models.GameResponse
 import be.bxl.formation.mynextgame.services.GameApiService
 import be.bxl.formation.mynextgame.services.GameApiInterface
@@ -49,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         val userId = intent.getStringExtra("user_id")
         val emailId = intent.getStringExtra("email_id")
+
 
         }
 

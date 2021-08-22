@@ -1,28 +1,16 @@
 package be.bxl.formation.mynextgame
 
-import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import be.bxl.formation.mynextgame.MainActivity
-import be.bxl.formation.mynextgame.R
+import be.bxl.formation.mynextgame.Db.GameDao
 import be.bxl.formation.mynextgame.models.Game
-import be.bxl.formation.mynextgame.models.GameResponse
-import be.bxl.formation.mynextgame.services.GameApiInterface
-import be.bxl.formation.mynextgame.services.GameApiService
 import com.bumptech.glide.Glide
-import com.google.firebase.auth.AuthResult
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_register_user.*
 import kotlinx.android.synthetic.main.item_vertical_game.view.*
-import org.w3c.dom.Text
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class MovieDetails : AppCompatActivity(){
@@ -35,6 +23,7 @@ class MovieDetails : AppCompatActivity(){
         val extraIdData = intent.getStringExtra("IDGame")
         val titleIdData = intent.getStringExtra("TitleGame")
         val coverMovieData = intent.getStringExtra("CoverGame")
+        val releaseMovieData = intent.getStringExtra("ReleaseGame")
 
         Toast.makeText(
             this,
@@ -43,13 +32,31 @@ class MovieDetails : AppCompatActivity(){
         ).show()
 
         val titleMovie: TextView = findViewById(R.id.movie_details_title)
-        val releaseMovie: TextView = findViewById(R.id.movies_release_date)
+        val idMovie: TextView = findViewById(R.id.id_movies)
         val coverMovie: ImageView = findViewById(R.id.cover_details_movie)
+        val releaseMovie: TextView = findViewById(R.id.movies_release_date)
         titleMovie.setText(titleIdData)
-        releaseMovie.setText(extraIdData)
+        idMovie.setText(extraIdData)
+        releaseMovie.setText(releaseMovieData)
+
         Glide.with(this).load(IMAGE_BASE + coverMovieData).into(coverMovie)
 
+        //User click on the star
+        val favouriteIcon : ImageView = findViewById(R.id.favourite_movie)
+        favouriteIcon.setOnClickListener{
+            val gameDao = GameDao(applicationContext)
 
+            val movie1 = Game(extraIdData,titleIdData,coverMovieData,releaseMovieData)
+
+            gameDao.openWritable()
+            gameDao.insert(movie1)
+            gameDao.close()
+
+            gameDao.openReadable()
+            val games: List<Any> = gameDao.all
+
+            gameDao.close()
+        }
 
     }
 

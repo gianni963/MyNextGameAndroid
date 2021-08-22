@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/movie_cover"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -68,11 +69,13 @@
         />
 
     <ImageView
+        android:id="@+id/favourite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_unstar"
         app:layout_constraintBottom_toBottomOf="@+id/popup_movies_id"
         app:layout_constraintEnd_toEndOf="@+id/close_popup"
+        app:layout_constraintRight_toLeftOf="@id/cardView"
         app:layout_constraintStart_toStartOf="@+id/textView3"
         app:layout_constraintTop_toTopOf="@+id/textView3"
         app:tint="#000000" />
