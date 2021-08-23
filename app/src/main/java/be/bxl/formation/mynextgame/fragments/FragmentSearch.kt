@@ -1,5 +1,6 @@
 package be.bxl.formation.mynextgame.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,8 @@ import android.widget.SearchView
 import androidx.fragment.app.Fragment
 import be.bxl.formation.mynextgame.Db.GameDao
 import be.bxl.formation.mynextgame.R
+import be.bxl.formation.mynextgame.models.Game
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -41,7 +44,10 @@ class FragmentSearch : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_search, container, false)
+
+
 
     }
 

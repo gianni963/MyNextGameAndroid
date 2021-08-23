@@ -1,7 +1,6 @@
 package be.bxl.formation.mynextgame
 
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -9,8 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import be.bxl.formation.mynextgame.Db.GameDao
 import be.bxl.formation.mynextgame.models.Game
 import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.activity_register_user.*
-import kotlinx.android.synthetic.main.item_vertical_game.view.*
+import com.google.firebase.auth.FirebaseAuth
 
 
 class MovieDetails : AppCompatActivity(){
@@ -44,18 +42,27 @@ class MovieDetails : AppCompatActivity(){
         //User click on the star
         val favouriteIcon : ImageView = findViewById(R.id.favourite_movie)
         favouriteIcon.setOnClickListener{
-            val gameDao = GameDao(applicationContext)
+            val user = FirebaseAuth.getInstance().currentUser
+            if(user!=null) {
+                val gameDao = GameDao(applicationContext)
 
-            val movie1 = Game(extraIdData,titleIdData,coverMovieData,releaseMovieData)
+                val movie1 = Game(extraIdData, titleIdData, coverMovieData, releaseMovieData)
 
-            gameDao.openWritable()
-            gameDao.insert(movie1)
-            gameDao.close()
+                gameDao.openWritable()
+                gameDao.insert(movie1)
+                gameDao.close()
 
-            gameDao.openReadable()
-            val games: List<Any> = gameDao.all
+                gameDao.openReadable()
+                val games: List<Any> = gameDao.all
 
-            gameDao.close()
+                gameDao.close()
+            }else{
+                Toast.makeText(
+                    this@MovieDetails,
+                    "You must be logged in",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
         }
 
     }
