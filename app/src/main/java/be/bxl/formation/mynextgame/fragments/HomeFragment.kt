@@ -97,7 +97,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun getLastGamesData(callback: (List<Game>) -> Unit){
-        val apiService = GameApiService.getInstance().create(GameApiInterface::class.java)
+       val apiService = GameApiService.getInstance().create(GameApiInterface::class.java)
 
         apiService.getLastGames().enqueue(object : Callback<GameResponse> {
             override fun onFailure(call: Call<GameResponse>, t: Throwable) {
@@ -109,5 +109,6 @@ class HomeFragment : Fragment() {
             }
 
         })
+
     }
 }

@@ -24,11 +24,13 @@ class FragmentWishList : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_wish_list, container, false)
-        val wlfavouriteView = view.findViewById<RecyclerView>(R.id.wish_list_vertical_recycler_view)
+        val view =  inflater?.inflate(R.layout.fragment_wish_list, container, false)
+        val wlfavouriteView= view.findViewById<RecyclerView>(R.id.wish_list_vertical_recycler_view)
+
 
         // Inflate the layout for this fragment
         val gameDao = GameDao(requireContext())
@@ -39,10 +41,10 @@ class FragmentWishList : Fragment() {
         println("----------------------------------------------------------$games----------------------------------------------------------")
         val w1 = games.get(0)
         println("---------- !!! we are looking for $w1")
-        /*
-        wlfavouriteView.adapter = FavouriteGameAdapter(R.layout.item_vertical_wish_list, games)
+
+        wlfavouriteView.adapter = FavouriteGameAdapter(R.layout.item_vertical_wish_list,games,requireContext())
         wlfavouriteView.addItemDecoration(GameItemDeco())
-        */
+
 
 
         gameDao.close()

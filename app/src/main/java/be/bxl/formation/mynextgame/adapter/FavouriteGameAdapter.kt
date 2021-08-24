@@ -17,14 +17,14 @@ import be.bxl.formation.mynextgame.RegisterUser
 import be.bxl.formation.mynextgame.models.Game
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.item_horizontal_game.view.*
-import kotlinx.android.synthetic.main.item_vertical_game.view.*
-import kotlinx.android.synthetic.main.item_vertical_game.view.image_item
+import kotlinx.android.synthetic.main.item_vertical_wish_list.view.*
+import kotlinx.android.synthetic.main.item_vertical_wish_list.view.image_item
 
 class FavouriteGameAdapter(
     private val layoutId: Int,
     private val games : List<Game>,
-) : RecyclerView.Adapter<FavouriteGameAdapter.ViewHolder>() {
+    val context : Context
+    ) : RecyclerView.Adapter<FavouriteGameAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val IMAGE_BASE = "https://image.tmdb.org/t/p/w500/"
@@ -33,9 +33,9 @@ class FavouriteGameAdapter(
         fun bindGame(game: Game) {
             val w1 = game
             println("!!---------- !!! we are looking for $w1")
-            itemView.name_popular_item.text = game.title
-            itemView.platform_popular_item.text = game.release
-            itemView.id_popular_item.text = game.id
+            itemView.name_wl_item.text = game.title
+            itemView.release_wl_item.text = game.release
+            //itemView.id_wl_item.text = game.id
             Glide.with(itemView).load(IMAGE_BASE + game.poster).into(itemView.image_item)
         }
     }
@@ -49,6 +49,8 @@ class FavouriteGameAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bindGame(games[position])
+
+
 
     }
     override fun getItemCount(): Int = 10
